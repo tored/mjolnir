@@ -3,7 +3,21 @@ mjolnir
 
 Frontend JavaScript library for crushing that DOM with a hammer!
 
-Expands the DOM API to be actually usable.
+Why not have the DOM library to work transparently with the DOM API without resorting to cludges?
+
+Mjolnir expands the DOM API to be actually usable where DOM elements fetched with DOM API has access to the same
+methods as DOM elements fetched with the library.
+
+Isn't this 100% pure evil?
+--------------------------
+
+When setting enumerable to false when doing Object.defineProperty, added prototype properties can be hidden from lower level for in statements. 
+
+API
+---
+
+See examples/ for code examples.
+
 
 mjolnir.core:
 ```javascript
@@ -38,3 +52,7 @@ HTMLCollection.toggleClass(cls);
 HTMLCollection.addEventListener(type, listener, useCapture);
 HTMLCollection.removeEventListener(type, listener, useCapture);
 ```
+
+How about legacy support?
+-------------------------
+No, but the library is built in mind that it would be possible to to add a mjolnir.legacy file.
