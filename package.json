@@ -1,0 +1,18 @@
+{
+  "name": "mjolnir",
+  "version": "0.0.0",
+  "description": "JavaScript Frontend library",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tored/mjolnir.git"
+  },
+  "author": "Tor Edvardsson",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "61c64dbb4d3d3b73a54511d478de1ecd8ad839dc",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.1"
+  }
+}
