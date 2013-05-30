@@ -3,15 +3,17 @@ mjolnir
 
 Frontend JavaScript library for crushing that DOM with a hammer!
 
-Why not have the DOM library to work transparently with the DOM API without resorting to cludges?
+Why not have a DOM library to work transparently with the DOM API without resorting to kludges?
 
 Mjolnir expands the DOM API to be actually usable where DOM elements fetched with DOM API has access to the same
 methods as DOM elements fetched with the library.
 
+Mjolnir focuses on supporting modern browsers by using HTML5 and EcmaScript5 API. This guarantees less cruft and better performance.
+
 Isn't this 100% pure evil?
 --------------------------
 
-When setting enumerable to false when doing Object.defineProperty, added prototype properties can be hidden from lower level for in statements. 
+When setting enumerable to false when doing Object.defineProperty, added prototype properties can be hidden from for in statements. 
 
 API
 ---
@@ -55,4 +57,4 @@ HTMLCollection.removeEventListener(type, listener, useCapture);
 
 How about legacy support?
 -------------------------
-No, but the library is built in mind that it would be possible to to add a mjolnir.legacy file.
+No, but the library is built in mind that it would be possible to to add a mjolnir.legacy.js file.
