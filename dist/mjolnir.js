@@ -51,13 +51,25 @@ var mjolnir = (function () {
 
     NodeMixin = Object.create(null);
     NodeMixin.attr = function (name, value) {
-        var result;
-        if (value) {
-            this.setAttribute(name, value);
+        var prop,
+            result;
+
+        if (typeof name === 'object') {
+            for (prop in name) {
+                if (name.hasOwnProperty(prop)) {
+                    this.setAttribute(prop, name[prop]);
+                }
+            }
             result = this;
         } else {
-            result = this.getAttribute(name);
+            if (value) {
+                this.setAttribute(name, value);
+                result = this;
+            } else {
+                result = this.getAttribute(name);
+            }
         }
+
         return result;
     };
     NodeMixin.addClass = function (cls) {
@@ -86,7 +98,6 @@ var mjolnir = (function () {
     NodeListMixin.some = library.li.core.some;
 
     NodeListMixin.getAttribute = function (name) {
-        var result;
         return this[0].getAttribute(name);
     };
     NodeListMixin.setAttribute = function (name, value) {
@@ -95,13 +106,17 @@ var mjolnir = (function () {
         });
         return this;
     };
-    NodeListMixin.attr = function (name, value) {
-        var result;
-        if (value) {
-            this.setAttribute(name, value);
+    NodeListMixin.attr = function (first, second) {
+        var i,
+            result;
+
+        if (typeof first === 'object' || second) {        
+            for (i = 0; i < this.lenght; i += 1) {
+                this[i].attr(first);
+            }
             result = this;
         } else {
-            result = this.getAttribute(name);
+            result = this.getAttribute(first);
         }
         return result;
     };
